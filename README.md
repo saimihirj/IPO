@@ -20,3 +20,7 @@ Building an interface for Image Processing and Analysis.
 ### To run the app, you can run:
 
 * ```streamlit run app.py```
+
+## Output
+### Screenshots
+![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-blur.png)
