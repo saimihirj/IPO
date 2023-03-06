@@ -23,7 +23,7 @@ Building an interface for Image Processing and Analysis.
 
 ## Output 
 ### Demo Video
-*  To be uploaded
+![demo-video](https://drive.google.com/file/d/1fdiibByZYOjudEzMq4w8USQk7qMI8DiX/view?usp=sharing)
 ### Screenshots
 *  Uploading Image
 ![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-upload.png)
