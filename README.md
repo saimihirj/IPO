@@ -22,6 +22,7 @@ Building an interface for Image Processing and Analysis.
 * ```streamlit run app.py```
 
 ## Output 
+### Demo Video
 ### Screenshots
 *  Uploading Image
 ![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-upload.png)
