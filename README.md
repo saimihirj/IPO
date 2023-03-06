@@ -29,9 +29,11 @@ Building an interface for Image Processing and Analysis.
 ![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-gray.png)
 *  Converting to HSV color model
 ![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-hsv.png)
-*  Toggle with Brightness, Contrast & Blurness of Image
+*  Toggle with Brightness
 ![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-bright.png)
+*  Toggle with Contrast
 ![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-contr.png)
+*  Toggle with Blurness
 ![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-blur.png)
 
 
