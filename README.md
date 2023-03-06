@@ -7,7 +7,9 @@ Building an interface for Image Processing and Analysis.
 
 ## Modules Used
 * cv2
-* stramlit
+* streamlit
 * numpy
 * PIL
 * matplotlib
+
+
