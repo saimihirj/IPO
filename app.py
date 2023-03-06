@@ -32,7 +32,7 @@ def contrast_image(image, amount):
 
 
 def main_loop():
-    st.header("Image Processing using python OpenCV")
+    st.header("Image Processing Outlook")
     st.sidebar.header("APPLY IMAGE FILTERS:")
 
     grayscale_filter = st.sidebar.checkbox('Convert to Grayscale')
