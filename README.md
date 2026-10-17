@@ -1,41 +1,38 @@
 # Image Processing Outlook
-Building an interface for Image Processing and Analysis.
 
-## Tools and Software Used
-* Python 3.x
-* Streamlit
-* flask
+A Streamlit app for exploring basic image processing. Upload a JPG or PNG, apply filters from the side panel, and compare the original and processed images side by side, each with a histogram of its pixel intensities.
 
-## Modules Used
-* cv2
-* streamlit
-* numpy
-* PIL
-* matplotlib
+## Filters
 
-## Execute Code
-### To get started, clone this repo and run the following to install the required packages:
-* ```pip install -r requirements.txt```
+| Filter | What it does |
+|---|---|
+| Grayscale | Converts the image to a single luminance channel |
+| HSV | Converts the image to the hue, saturation and value colour model |
+| Blur | Gaussian blur with an adjustable strength |
+| Brightness | Shifts every pixel value up or down |
+| Contrast | Scales pixel values to stretch or compress the range |
 
-### To run the app, you can run:
+Filters are applied in that order and build on each other, so you can, for example, blur a grayscale image. Image processing uses OpenCV; the histograms use Matplotlib.
 
-* ```streamlit run app.py```
+## Running it
 
-## Output 
-### Demo Video - Drive Link
-![video](https://drive.google.com/file/d/1fdiibByZYOjudEzMq4w8USQk7qMI8DiX/view?usp=sharing)
-### Screenshots
-*  Uploading Image
-![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-upload.png)
-*  Converting to Grayscale Model
-![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-gray.png)
-*  Converting to HSV color model
-![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-hsv.png)
-*  Toggle with Brightness
-![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-bright.png)
-*  Toggle with Contrast
-![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-contr.png)
-*  Toggle with Blurness
-![image](https://github.com/saimihirj/IPO/blob/master/output-ss/output-blur.png)
+Requires Python 3.11 or later.
 
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
 
+## Screenshots
+
+| Upload | Grayscale | HSV |
+|---|---|---|
+| ![Upload](output-ss/output-upload.png) | ![Grayscale](output-ss/output-gray.png) | ![HSV](output-ss/output-hsv.png) |
+
+| Brightness | Contrast | Blur |
+|---|---|---|
+| ![Brightness](output-ss/output-bright.png) | ![Contrast](output-ss/output-contr.png) | ![Blur](output-ss/output-blur.png) |
+
+## License
+
+MIT. See [LICENSE](LICENSE).

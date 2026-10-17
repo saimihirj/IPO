@@ -7,11 +7,11 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title="IPO", layout="centered", initial_sidebar_state = "auto")
 
 def grayscale(img):
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     return gray
 
 def hsv(img):
-    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    hsv = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
     return hsv
 
 def enhance_details(img):
@@ -43,45 +43,45 @@ def main_loop():
     if not image_file:
         return None
 
-    original_image = Image.open(image_file)
+    original_image = Image.open(image_file).convert("RGB")
     original_image = np.array(original_image)
     processed_image = original_image
 
     if grayscale_filter:
         processed_image = grayscale(original_image)
     if hsv_filter:
-        processed_image = hsv(original_image)
+        processed_image = hsv(processed_image if processed_image.ndim == 3 else original_image)
 
     if enhance_details_filter:
         filters = st.sidebar.multiselect("Choose Filters", ("Blur", "Brightness", "Contrast"))
         if "Blur" in filters:
             blur_amount = st.sidebar.slider("Blur Amount", min_value=0.0, max_value=3.5)
-            processed_image = blur_image(original_image, blur_amount)
+            processed_image = blur_image(processed_image, blur_amount)
         if "Brightness" in filters:
             brightness_amount = st.sidebar.slider("Brightness Amount", min_value=-50, max_value=50, value=0)
-            processed_image = brighten_image(original_image, brightness_amount)
+            processed_image = brighten_image(processed_image, brightness_amount)
         if "Contrast" in filters:
             contrast_amount = st.sidebar.slider("Contrast Amount", min_value=-3.5, max_value=3.5)
-            processed_image = contrast_image(original_image, contrast_amount)
+            processed_image = contrast_image(processed_image, contrast_amount)
 
     org_img = plt.figure(figsize=(15, 10))
-    plt.hist(original_image.ravel(), 256, [0,256], color='green')
+    plt.hist(original_image.ravel(), bins=256, range=(0, 256), color='green')
     plt.ylabel("Number Of Pixels", color='green')
     plt.xlabel("Pixel Intensity- From 0-255", color='green')
     plt.title("Histogram Showing Pixel Intensity And Corresponding Number Of Pixels", color='green')
 
     st.subheader("Original Image")
-    st.image(original_image, use_column_width=True)
+    st.image(original_image, width="stretch")
     st.pyplot(org_img)
 
     proc_img = plt.figure(figsize = (15, 10))
-    plt.hist(processed_image.ravel(), 256, [0,256], color='blue')
+    plt.hist(processed_image.ravel(), bins=256, range=(0, 256), color='blue')
     plt.ylabel("Number Of Pixels", color='blue')
     plt.xlabel("Pixel Intensity- From 0-255", color='blue')
     plt.title("Histogram Showing Pixel Intensity And Corresponding Number Of Pixels", color='blue')
 
     st.subheader("Processed Image")
-    st.image(processed_image, use_column_width=True)
+    st.image(processed_image, width="stretch")
     st.pyplot(proc_img)
 
 if __name__ == '__main__':
