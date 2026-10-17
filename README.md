@@ -1,6 +1,6 @@
 # Image Processing Outlook
 
-A Streamlit app for exploring basic image processing. Upload a JPG or PNG, apply filters from the side panel, and compare the original and processed images side by side, each with a histogram of its pixel intensities.
+A Streamlit app for exploring basic image processing. Upload a JPG or PNG, apply filters from the side panel, and compare the original with the processed image, each shown with a histogram of its pixel intensities.
 
 ## Filters
 
